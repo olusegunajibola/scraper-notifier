@@ -1,0 +1,3 @@
+[2026-03-18 10:46:02] --- STARTING RUN ---
+[2026-03-18 10:46:02] MATCH: Found ['graduatorie di merito dei vincitori'] on Abruzzo
+[2026-03-18 10:46:05] SUCCESS: Email sent for Abruzzo

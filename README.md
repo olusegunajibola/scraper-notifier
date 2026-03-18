@@ -1,6 +1,6 @@
-# YCombinator Company Scraper
+# Scraper Notifier
 
-This project consists of two Python scripts that utilize Selenium and Pandas to scrape and extract company and founder data from YCombinator website.
+This project consists of two Python scripts that utilize Selenium and Pandas to scrape and extract information from a website based on some keywords available.
 
 ## Features
 
@@ -24,6 +24,7 @@ This project consists of two Python scripts that utilize Selenium and Pandas to 
   - `selenium`
   - `pandas`
   - `openpyxl` (for Excel file handling)
+  - `beautifulsoup4`
 
 ## Installation
 
