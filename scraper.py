@@ -93,6 +93,7 @@ def run_bot():
                     
                     soup = BeautifulSoup(response.text, 'html.parser')
                     page_content = " ".join(soup.get_text().lower().split())
+                    # print(page_content)
                     
                     matches = [kw for kw in keywords if kw in page_content]
                     
