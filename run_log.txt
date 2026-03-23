@@ -1,0 +1,54 @@
+[2026-03-20 18:21:17] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-20 18:21:17] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-20 18:21:18] SUCCESS: Page loaded for Abruzzo
+[2026-03-20 18:21:18] AI: Sending content for Abruzzo to Gemini...
+[2026-03-20 18:21:27] RESULT: No match for Abruzzo
+[2026-03-20 18:21:42] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-20 18:21:42] SUCCESS: Page loaded for Basilicata
+[2026-03-20 18:21:42] AI: Sending content for Basilicata to Gemini...
+[2026-03-20 18:21:54] RESULT: No match for Basilicata
+[2026-03-20 18:22:09] --- RUN ENDED | Processed: 2 | Skipped: 0 ---
+[2026-03-20 18:28:43] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-20 18:28:43] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-20 18:28:43] SUCCESS: Page loaded for Abruzzo
+[2026-03-20 18:28:43] AI: Sending content for Abruzzo to Gemini...
+[2026-03-20 18:28:55] RESULT: No match for Abruzzo
+[2026-03-20 18:29:10] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-20 18:29:11] SUCCESS: Page loaded for Basilicata
+[2026-03-20 18:29:11] AI: Sending content for Basilicata to Gemini...
+[2026-03-20 18:29:22] RESULT: No match for Basilicata
+[2026-03-20 18:29:37] --- RUN ENDED | Processed: 2 | Skipped: 0 ---
+[2026-03-20 18:41:15] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-20 18:41:15] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-20 18:41:15] SUCCESS: Page loaded for Abruzzo
+[2026-03-20 18:41:16] AI: Sending content for Abruzzo to Gemini...
+[2026-03-20 18:41:29] RESULT: No match for Abruzzo
+[2026-03-20 18:41:44] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-20 18:41:44] SUCCESS: Page loaded for Basilicata
+[2026-03-20 18:41:44] AI: Sending content for Basilicata to Gemini...
+[2026-03-20 18:41:54] RESULT: No match for Basilicata
+[2026-03-20 18:42:09] SCRAPE: Attempting to visit Basilicata 2 (https://www.mim.gov.it/web/basilicata/personale-scolastico)
+[2026-03-20 18:42:09] SUCCESS: Page loaded for Basilicata 2
+[2026-03-20 18:42:09] AI: Sending content for Basilicata 2 to Gemini...
+[2026-03-20 18:42:19] RESULT: No match for Basilicata 2
+[2026-03-20 18:42:34] --- RUN ENDED | Processed: 3 | Skipped: 0 ---
+[2026-03-20 18:44:30] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-20 18:44:30] SCRAPE: Attempting to visit Basilicata 2 (https://www.mim.gov.it/web/basilicata/personale-scolastico)
+[2026-03-20 18:44:31] SUCCESS: Page loaded for Basilicata 2
+[2026-03-20 18:44:31] AI: Sending content for Basilicata 2 to Gemini...
+[2026-03-20 18:44:41] RESULT: No match for Basilicata 2
+[2026-03-20 18:44:56] --- RUN ENDED | Processed: 1 | Skipped: 0 ---
+[2026-03-20 18:50:10] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-20 18:50:10] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-20 18:50:11] SUCCESS: Page loaded for Abruzzo
+[2026-03-20 18:50:11] AI: Sending content for Abruzzo to Gemini...
+[2026-03-20 18:50:18] MATCH FOUND for Abruzzo: MATCH: In data 11 marzo 2026 è stato pubblicato il "Decreto Direttoriale Graduatoria-Bando Formazione Inclusione", un provvedimento che riguarda le graduatorie relative ai bandi per la formazione sui temi dell'inclusione, in linea con l'iniziativa ministeriale descritta.
+[2026-03-20 18:50:35] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-20 18:50:35] SUCCESS: Page loaded for Basilicata
+[2026-03-20 18:50:36] AI: Sending content for Basilicata to Gemini...
+[2026-03-20 18:50:44] RESULT: No match for Basilicata
+[2026-03-20 18:50:59] SCRAPE: Attempting to visit Basilicata 2 (https://www.mim.gov.it/web/basilicata/personale-scolastico)
+[2026-03-20 18:50:59] SUCCESS: Page loaded for Basilicata 2
+[2026-03-20 18:50:59] AI: Sending content for Basilicata 2 to Gemini...
+[2026-03-20 18:51:06] RESULT: No match for Basilicata 2
+[2026-03-20 18:51:21] --- RUN ENDED | Processed: 3 | Skipped: 0 ---
