@@ -62,12 +62,19 @@ def ask_gemini(page_text, region_name):
     """Uses Gemini to identify official calls for bids based on the MIM article."""
     prompt = f"""
     Analyze this text from the USR {region_name} website. 
-    Target: Update regarding use of calculators.
-    
-    Rules:
-    - If a specific call in March 2026 or later exists for use of calculators is found: respond "MATCH: [Summary in italian]".
+    Context:
+
+    The Ministry of Education and Merit (MIM) issued Nota prot. n. 36591 on July 25, 2025. This note outlines a national training plan for inclusion for the 2025/2026 school year, allocating €852,000 to regional "Scuole Polo" (Training Hub Schools).
+
+    Search Goal:
+
+    Search for official calls for bids, announcements, or similar opportunities related to this MIM training initiative on the USR {region_name} website. The MIM article specifies that the training is for support teachers (docenti di sostegno) but also involves regular curricular teachers.
+
+     Rules:
+    - If a relating call is found: respond "MATCH: [Summary in italian]".
     - Otherwise respond "NO".
-    
+   
+
     Text to analyze: {page_text[:12000]}
     """
     try:
