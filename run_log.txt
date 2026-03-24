@@ -148,3 +148,89 @@
 [2026-03-24 05:03:53] AI: Sending content for Calabria to Gemini...
 [2026-03-24 05:03:53] QUOTA EXHAUSTED: Stopping run.
 [2026-03-24 05:03:55] --- RUN ENDED | Processed: 3 | Skipped: 0 ---
+[2026-03-24 07:18:12] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-24 07:18:12] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-24 07:18:13] SUCCESS: Page loaded for Abruzzo
+[2026-03-24 07:18:13] AI: Sending content for Abruzzo to Gemini...
+[2026-03-24 07:18:19] RESULT: No match for Abruzzo
+[2026-03-24 07:18:39] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-24 07:18:40] SUCCESS: Page loaded for Basilicata
+[2026-03-24 07:18:40] AI: Sending content for Basilicata to Gemini...
+[2026-03-24 07:18:46] RESULT: No match for Basilicata
+[2026-03-24 07:19:06] SCRAPE: Attempting to visit Calabria (https://www.istruzione.calabria.it)
+[2026-03-24 07:19:07] SUCCESS: Page loaded for Calabria
+[2026-03-24 07:19:07] AI: Sending content for Calabria to Gemini...
+[2026-03-24 07:19:12] RESULT: No match for Calabria
+[2026-03-24 07:19:32] SCRAPE: Attempting to visit Campania (https://www.mim.gov.it/web/miur-usr-campania/notizie)
+[2026-03-24 07:19:33] SUCCESS: Page loaded for Campania
+[2026-03-24 07:19:33] AI: Sending content for Campania to Gemini...
+[2026-03-24 07:19:43] RESULT: No match for Campania
+[2026-03-24 07:20:03] SCRAPE: Attempting to visit Emilia-Romagna (https://www.istruzioneer.gov.it/tutte-le-notizie/)
+[2026-03-24 07:20:04] SUCCESS: Page loaded for Emilia-Romagna
+[2026-03-24 07:20:04] AI: Sending content for Emilia-Romagna to Gemini...
+[2026-03-24 07:20:08] RESULT: No match for Emilia-Romagna
+[2026-03-24 07:20:28] SCRAPE: Attempting to visit Friuli V.G. (https://usrfvg.gov.it/it/home/menu/uffici/Direzione/)
+[2026-03-24 07:20:30] SUCCESS: Page loaded for Friuli V.G.
+[2026-03-24 07:20:30] AI: Sending content for Friuli V.G. to Gemini...
+[2026-03-24 07:20:34] RESULT: No match for Friuli V.G.
+[2026-03-24 07:20:54] SCRAPE: Attempting to visit Lazio (https://www.ufficioscolasticoregionalelazio.it/home/)
+[2026-03-24 07:20:56] SUCCESS: Page loaded for Lazio
+[2026-03-24 07:20:56] AI: Sending content for Lazio to Gemini...
+[2026-03-24 07:20:59] RESULT: No match for Lazio
+[2026-03-24 07:21:19] SCRAPE: Attempting to visit Liguria 1 (https://www.istruzioneliguria.gov.it/)
+[2026-03-24 07:21:22] SUCCESS: Page loaded for Liguria 1
+[2026-03-24 07:21:22] AI: Sending content for Liguria 1 to Gemini...
+[2026-03-24 07:21:26] RESULT: No match for Liguria 1
+[2026-03-24 07:21:46] SCRAPE: Attempting to visit Liguria 2 (https://www.istruzioneliguria.gov.it/archivio-news)
+[2026-03-24 07:21:47] SUCCESS: Page loaded for Liguria 2
+[2026-03-24 07:21:47] AI: Sending content for Liguria 2 to Gemini...
+[2026-03-24 07:21:51] RESULT: No match for Liguria 2
+[2026-03-24 07:22:11] SCRAPE: Attempting to visit Lombardia (https://www.mim.gov.it/web/usr-lombardia/comunicazioni)
+[2026-03-24 07:22:12] SUCCESS: Page loaded for Lombardia
+[2026-03-24 07:22:12] AI: Sending content for Lombardia to Gemini...
+[2026-03-24 07:22:17] RESULT: No match for Lombardia
+[2026-03-24 07:22:37] SCRAPE: Attempting to visit Marche (https://www.mim.gov.it/web/miur-usr-marche/novit%C3%A0-dall-usr-marche)
+[2026-03-24 07:22:37] SUCCESS: Page loaded for Marche
+[2026-03-24 07:22:38] AI: Sending content for Marche to Gemini...
+[2026-03-24 07:22:44] RESULT: No match for Marche
+[2026-03-24 07:23:04] SCRAPE: Attempting to visit Molise (https://www.mim.gov.it/web/molise/notizie)
+[2026-03-24 07:23:04] SUCCESS: Page loaded for Molise
+[2026-03-24 07:23:05] AI: Sending content for Molise to Gemini...
+[2026-03-24 07:23:11] RESULT: No match for Molise
+[2026-03-24 07:23:31] SCRAPE: Attempting to visit Piemonte (https://www.istruzionepiemonte.it/)
+[2026-03-24 07:23:33] SUCCESS: Page loaded for Piemonte
+[2026-03-24 07:23:33] AI: Sending content for Piemonte to Gemini...
+[2026-03-24 07:23:37] RESULT: No match for Piemonte
+[2026-03-24 07:23:57] SCRAPE: Attempting to visit Puglia (https://www.pugliausr.gov.it/)
+[2026-03-24 07:23:59] SUCCESS: Page loaded for Puglia
+[2026-03-24 07:23:59] AI: Sending content for Puglia to Gemini...
+[2026-03-24 07:24:05] RESULT: No match for Puglia
+[2026-03-24 07:24:25] SCRAPE: Attempting to visit Sardegna (https://www.mim.gov.it/web/usr-sardegna/notizie)
+[2026-03-24 07:24:26] SUCCESS: Page loaded for Sardegna
+[2026-03-24 07:24:26] AI: Sending content for Sardegna to Gemini...
+[2026-03-24 07:24:32] RESULT: No match for Sardegna
+[2026-03-24 07:24:52] SCRAPE: Attempting to visit Sicilia 1 (https://www.usr.sicilia.it/tutte-le-news/)
+[2026-03-24 07:24:52] SUCCESS: Page loaded for Sicilia 1
+[2026-03-24 07:24:52] AI: Sending content for Sicilia 1 to Gemini...
+[2026-03-24 07:24:56] RESULT: No match for Sicilia 1
+[2026-03-24 07:25:16] SCRAPE: Attempting to visit Sicilia 2 (https://www.usr.sicilia.it)
+[2026-03-24 07:25:16] SUCCESS: Page loaded for Sicilia 2
+[2026-03-24 07:25:16] AI: Sending content for Sicilia 2 to Gemini...
+[2026-03-24 07:25:21] RESULT: No match for Sicilia 2
+[2026-03-24 07:25:41] SCRAPE: Attempting to visit Toscana (https://www.mim.gov.it/web/miur-usr-toscana/notizie)
+[2026-03-24 07:25:42] SUCCESS: Page loaded for Toscana
+[2026-03-24 07:25:42] AI: Sending content for Toscana to Gemini...
+[2026-03-24 07:25:48] RESULT: No match for Toscana
+[2026-03-24 07:26:08] SCRAPE: Attempting to visit Umbria (https://istruzione.umbria.it/)
+[2026-03-24 07:26:09] SUCCESS: Page loaded for Umbria
+[2026-03-24 07:26:09] AI: Sending content for Umbria to Gemini...
+[2026-03-24 07:26:13] RESULT: No match for Umbria
+[2026-03-24 07:26:33] SCRAPE: Attempting to visit Veneto 1 (https://istruzioneveneto.gov.it/notizie-usr-veneto-lista/)
+[2026-03-24 07:26:35] SUCCESS: Page loaded for Veneto 1
+[2026-03-24 07:26:35] AI: Sending content for Veneto 1 to Gemini...
+[2026-03-24 07:26:39] RESULT: No match for Veneto 1
+[2026-03-24 07:26:59] SCRAPE: Attempting to visit Veneto 2 (https://istruzioneveneto.gov.it/)
+[2026-03-24 07:27:00] SUCCESS: Page loaded for Veneto 2
+[2026-03-24 07:27:00] AI: Sending content for Veneto 2 to Gemini...
+[2026-03-24 07:27:00] QUOTA EXHAUSTED: Stopping run.
+[2026-03-24 07:27:03] --- RUN ENDED | Processed: 21 | Skipped: 0 ---
