@@ -244,3 +244,17 @@
 [2026-03-24 10:06:12] AI: Sending content for Basilicata to Gemini...
 [2026-03-24 10:06:12] QUOTA EXHAUSTED: Stopping run.
 [2026-03-24 10:06:16] --- RUN ENDED | Processed: 2 | Skipped: 0 ---
+[2026-03-24 13:47:08] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-24 13:47:08] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-24 13:47:08] SUCCESS: Page loaded for Abruzzo
+[2026-03-24 13:47:08] AI: Sending content for Abruzzo to Gemini...
+[2026-03-24 13:47:14] RESULT: No match for Abruzzo
+[2026-03-24 13:47:34] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-24 13:47:35] SUCCESS: Page loaded for Basilicata
+[2026-03-24 13:47:35] AI: Sending content for Basilicata to Gemini...
+[2026-03-24 13:47:40] RESULT: No match for Basilicata
+[2026-03-24 13:48:00] SCRAPE: Attempting to visit Calabria (https://www.istruzione.calabria.it)
+[2026-03-24 13:48:01] SUCCESS: Page loaded for Calabria
+[2026-03-24 13:48:01] AI: Sending content for Calabria to Gemini...
+[2026-03-24 13:48:01] QUOTA EXHAUSTED: Stopping run.
+[2026-03-24 13:48:02] --- RUN ENDED | Processed: 3 | Skipped: 0 ---
