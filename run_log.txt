@@ -234,3 +234,13 @@
 [2026-03-24 07:27:00] AI: Sending content for Veneto 2 to Gemini...
 [2026-03-24 07:27:00] QUOTA EXHAUSTED: Stopping run.
 [2026-03-24 07:27:03] --- RUN ENDED | Processed: 21 | Skipped: 0 ---
+[2026-03-24 10:05:42] --- STARTING RUN (GOOGLE-GENAI SDK) ---
+[2026-03-24 10:05:42] SCRAPE: Attempting to visit Abruzzo (https://www.mim.gov.it/web/abruzzo/notizie)
+[2026-03-24 10:05:43] SUCCESS: Page loaded for Abruzzo
+[2026-03-24 10:05:43] AI: Sending content for Abruzzo to Gemini...
+[2026-03-24 10:05:51] RESULT: No match for Abruzzo
+[2026-03-24 10:06:11] SCRAPE: Attempting to visit Basilicata (https://www.mim.gov.it/web/basilicata/notizie)
+[2026-03-24 10:06:11] SUCCESS: Page loaded for Basilicata
+[2026-03-24 10:06:12] AI: Sending content for Basilicata to Gemini...
+[2026-03-24 10:06:12] QUOTA EXHAUSTED: Stopping run.
+[2026-03-24 10:06:16] --- RUN ENDED | Processed: 2 | Skipped: 0 ---
