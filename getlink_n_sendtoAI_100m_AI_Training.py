@@ -322,7 +322,7 @@ MISSIONS = [
 #                 links_blob = "\n".join(notice_links)
 #                 print(len(links_blob), f"characters in links blob for {region}")
                 
-#                 # 2. Analyze with Gemini
+#                 # 2 Analyze with Gemini
 #                 log_message(f"Sending {region} links to Gemini for analysis...")
 #                 analysis = ask_gemini(links_blob, region)
                 
