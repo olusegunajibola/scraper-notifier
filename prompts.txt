@@ -56,3 +56,78 @@ If no mention of ATA training or PNRR 2.1 is found, respond: NO.
 Text to analyze: {page_text[:12000]}
 """
 ============================================
+
+==============Youth games Prompt================
+"""Analyze the following list of links from the USR {region_name} website.
+
+Target Topic: Giochi della Gioventù or Gioventu (Youth Games) 2025/2026.
+Goal: Identify any official announcements, circulars (circolari), or technical notes regarding the organization, registration, or calendar for the Youth Games.
+
+Data Processing Rules:
+
+Filter: Ignore general news about school strikes or Erasmus unless they specifically mention the Youth Games.
+
+Format: If a match is found, respond ONLY with:
+- MATCH: [Title of the notice in Italian based on the URL] | [The Full URL]
+- No Match: If no link is related to the Youth Games, respond with NO.
+
+Here is the data: {all_links_text}
+"""
+================================================
+
+==============Entrepreneurship Championships====
+"""Analyze the following list of URLs from the Regional School Office {region_name} website.
+
+Target Topic: I Campionati di Imprenditorialità 2025-2026.
+Context: This is a national competition organized by Junior Achievement Italia and the MIM for 'Valorizzazione delle Eccellenze'.
+
+Extraction Rules:
+
+Identify: Look for links containing keywords like imprenditorialita, junior-achievement, ja-italia, or eccellenze.
+Validation: Ensure the link is a specific announcement or circular, not just a general homepage.
+
+Output Format:
+
+- If found, respond ONLY: MATCH: [Title of the notice in Italian based on the URL] | [The Clean URL]
+- If no relevant link exists, respond: NO
+
+Data to analyze: {all_links_text}
+"""
+================================================
+
+
+==============Different Prompts=================
+"Analyze the following list of URLs from an Italian Regional School Office {region_name}. Your task is to perform three independent searches within this data.
+
+MISSION 1: Sports (Giochi della Gioventù)
+
+Keywords: giochi, gioventu, sport, campionati-studenteschi.
+
+Goal: Find notices about the 2025-2026 Youth Games.
+
+MISSION 2: Administrative (Diritto allo Studio)
+
+Keywords: 14/2011, quattordici, diritto-studio, permessi-studio.
+
+Goal: Find any specific mention or update regarding Circular 14/2011.
+
+MISSION 3: Excellence (Imprenditorialità)
+
+Keywords: imprenditorialita, junior-achievement, ja-italia, eccellenze.
+
+Goal: Find the national entrepreneurship competition announcements.
+
+CLEANING RULES:
+
+If the site is Lombardia, remove the ? and everything after it.
+
+If the site is Puglia, ensure the URL starts with https://www.pugliausr.gov.it.
+
+OUTPUT FORMAT:
+You must respond in this exact format for every match found:
+MATCH [Topic Name]: [Title] | [Clean URL]
+
+If a topic has no matches, do not mention it. If nothing is found at all, respond: NO.
+
+DATA TO ANALYZE: {all_links_text}
+================================================

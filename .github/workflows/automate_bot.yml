@@ -1,10 +1,17 @@
-name: MIM ATA Bot 8x Daily
+name: MIM ATA Bot Daily
 
 on: 
+  # schedule:
+  #   # Runs at 00:07, 03:07, 06:07, 09:07, 12:07, 15:07, 18:07, 21:07 UTC
+  #   - cron: '7 */3 * * *'       
+  # workflow_dispatch: # Allows you to run it manually for testing
+
   schedule:
-    # Runs at 00:07, 03:07, 06:07, 09:07, 12:07, 15:07, 18:07, 21:07 UTC
-    - cron: '7 */3 * * *'       
-  workflow_dispatch: # Allows you to run it manually for testing
+    # 12:37 UTC is 13:37 (1:37 PM) in Italy (Winter Time)
+    # Note: In Summer, this will run at 14:37 (2:37 PM) Italy time.
+    - cron: '37 12 * * *'    
+    
+  workflow_dispatch: # Still allows manual testing
 
 jobs:
   build:
@@ -34,7 +41,7 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scraperv2_it.py
+        run: python getlink_n_sendtoAI_100m_AI_Training.py
 
       - name: Commit and push changes
         run: |
