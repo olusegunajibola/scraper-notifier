@@ -61,22 +61,6 @@ def send_email_logic(subject, body, to_self=False):
 
 # --- STEP 1: LINK EXTRACTION (The "Baby Urls") ---
 def get_notice_links(origin_url, region):
-    # """Extracts specific news links containing '/-/' and excludes queries."""
-    # headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0.0.0'}
-    # try:
-    #     res = requests.get(origin_url, headers=headers, timeout=20)
-    #     res.raise_for_status()
-    #     soup = BeautifulSoup(res.text, 'html.parser')
-        
-    #     links = []
-    #     for link in soup.find_all('a'):
-    #         href = link.get('href')
-    #         if href and "/-/" in href and "?" not in href:
-    #             links.append(urljoin(origin_url, href))
-    #     return list(set(links)) # Deduplicate
-    # except Exception as e:
-    #     log_message(f"Scrape Error for {origin_url}: {e}")
-    #     return []
     """
     Fetches links from a URL and applies specific filtering rules 
     based on the 'Regione' provided in the CSV.
@@ -187,7 +171,7 @@ def get_notice_links(origin_url, region):
             elif region == "Friuli V.G.":
                 # 1. Define noise to ignore
                 noise = [".pdf", "#", "mailto:", "index.html", "?facet_instancedate", "sl/?__locale=sl", "/Procedure-concorsuali/", ".html", "/aree/"]
-                # "/index.php?start=",
+                
                 
                 # 2. Check basics
                 has_no_noise = not any(p in full_url.lower() for p in noise)
@@ -201,7 +185,7 @@ def get_notice_links(origin_url, region):
             elif region == "Provincia Autonoma di Trento":
                 # 1. Define noise to ignore
                 noise = [".pdf", "#", "mailto:", "index.html", "?facet_instancedate", "sl/?__locale=sl", "/Procedure-concorsuali/", ".html", "/aree/"]
-                # "/index.php?start=",
+                
                 
                 # 2. Check basics
                 has_no_noise = not any(p in full_url.lower() for p in noise)
@@ -260,34 +244,31 @@ def get_notice_links(origin_url, region):
 # def ask_gemini(all_links_text, region_name):
 def ask_gemini(full_prompt):
     """Sends the provided prompt to Gemini and returns the response."""
-    # prompt = f"""Analyze the following list of links from the USR {region_name} website.
 
-    # Target Topic: Giochi della Gioventù or Gioventu (Youth Games) 2025/2026.
-    # Goal: Identify any official announcements, circulars (circolari), or technical notes regarding the organization, registration, or calendar for the Youth Games.
+    max_retries = 3
+    retry_delay = 15  # seconds
 
-    # Data Processing Rules:
-
-    # Filter: Ignore general news about school strikes or Erasmus unless they specifically mention the Youth Games.
-
-    # Format: If a match is found, respond ONLY with:
-    # - MATCH: [Title of the notice in Italian based on the URL] | [The Full URL]
-    # - No Match: If no link is related to the Youth Games, respond with NO.
-
-    # Here is the data: {all_links_text}
-    # """
-    try:
-        response = client.models.generate_content(
-            model="gemini-3-flash-preview",
-            contents=full_prompt
-        )
-        return response.text.strip()
-    except Exception as e:
-        if "429" in str(e): return "RATE_LIMIT_HIT"
-        log_message(f"Gemini API Error: {e}")
-        return "ERROR"
-
-# TASK TO AI
-# TODO
+    for attempt in range(max_retries):
+        try:
+            response = client.models.generate_content(
+                model="gemini-3-flash-preview",
+                contents=full_prompt
+            )
+            return response.text.strip()
+        except Exception as e:
+            if "503" in str(e):
+                log_message(f"Service Unavailable (503) error from Gemini. Attempt {attempt + 1} of {max_retries}. Retrying in {retry_delay} seconds...")
+                time.sleep(retry_delay)
+            else:
+                log_message(f"Gemini API Error: {e}")
+                return "ERROR"
+            
+    # If all retries fail, send an email notification
+    log_message(f"Max retries ({max_retries}) reached for Gemini API. Sending email notification.")
+    subject = f"BOT ALERT: Gemini API Unavailable for {max_retries} attempts"
+    body = f"The Gemini API returned a 503 UNAVAILABLE error {max_retries} times. Please check the service status."
+    send_email_logic(subject, body, to_self=True)
+    return "ERROR"
 
 MISSIONS = [
     # {"id": "GIOCHI", "topic": "Giochi della Gioventù 2025/26", "subject": "Giochi Gioventù"},
@@ -299,84 +280,6 @@ MISSIONS = [
         "subject": "PNRR: AI Snodi Formativi"
     }
 ]
-
-
-# --- MAIN BOT LOGIC ---
-# def run_bot():
-#     log_message("--- STARTING REGIONAL SCAN ---")
-#     history = load_history()
-#     csv_filename = 'files/data/batch_01.csv'
-
-#     try:
-#         with open(csv_filename, mode='r', encoding='utf-8-sig') as file:
-#             reader = csv.DictReader(file)
-#             for row in reader:
-#                 region, origin_url = row['Regione'], row['Sito Web Ufficiale']
-                
-#                 # 1. Get all "Baby URLs"
-#                 log_message(f"Scanning {region}...")
-#                 notice_links = get_notice_links(origin_url, region)
-                
-#                 # Convert list to a single string (max 31k chars as requested)
-#                 if not notice_links: continue
-#                 links_blob = "\n".join(notice_links)
-#                 print(len(links_blob), f"characters in links blob for {region}")
-                
-#                 # 2 Analyze with Gemini
-#                 log_message(f"Sending {region} links to Gemini for analysis...")
-#                 analysis = ask_gemini(links_blob, region)
-                
-#                 if analysis == "RATE_LIMIT_HIT":
-#                     log_message("Rate limit hit. Sleeping for 60s...")
-#                     send_email_logic("BOT ALERT: Gemini Quota Hit", "Rate limit hit. Increase sleep time.", to_self=True)
-#                     time.sleep(60)
-#                     continue
-
-#                 # if "MATCH:" in analysis:
-#                 #     # Check if we already alerted for this specific match today
-#                 #     match_id = f"{region}_{analysis[:50]}"
-                    
-#                 #     if match_id not in history:
-#                 #         log_message(f"FOUND: {analysis}")
-#                 #         send_email_logic(f"È stato trovato un nuovo bando/annuncio di formazione ATA per {region}", f"Riepilogo: {analysis}\nURL: {url}")
-#                 #         # Send Email Logic here (omitted for brevity)
-#                 #         save_to_history(match_id)
-
-#                 if "MATCH:" in analysis:
-#                     # 1. Extract the part after "MATCH:" and split by the "|" character
-#                     content = analysis.replace("MATCH:", "").strip()
-                    
-#                     if "|" in content:
-#                         title_summary, extracted_url = content.split("|", 1)
-#                         title_summary = title_summary.strip()
-#                         extracted_url = extracted_url.strip()
-#                     else:
-#                         # Fallback if Gemini forgets the "|"
-#                         title_summary = content
-#                         extracted_url = origin_url # Fallback to main page
-                    
-#                     # 2. Update your Match ID to be unique to the specific link
-#                     match_id = f"{region}_{extracted_url}"
-                    
-#                     if match_id in history:
-#                         log_message(f"Duplicate found for {region} with URL: {extracted_url}. Skipping email.")
-#                     else:
-#                         log_message(f"FOUND: {title_summary}")
-                        
-#                         # 3. Use the extracted data in your email
-#                         email_subject = f"Giochi Gioventù: Nuovo avviso per {region}"
-#                         email_body = f"Riepilogo: {title_summary}\n\nLink diretto: {extracted_url}"
-                        
-#                         if send_email_logic(email_subject, email_body):
-#                             save_to_history(match_id)
-#                             log_message(f"Email sent for {region} regarding {extracted_url}")
-                
-#                 # Safety sleep to avoid 429 errors between the 8 regions
-#                 time.sleep(15)
-
-#     except Exception as e:
-#         log_message(f"FATAL ERROR: {e}")
-
 
 def run_bot():
     log_message("--- STARTING REGIONAL SCAN ---")

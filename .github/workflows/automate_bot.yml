@@ -41,7 +41,7 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python getlink_n_sendtoAI_100m_AI_Training.py
+        run: python getlink_n_sendtoAI_100m_AI_Training_v1.py
 
       - name: Commit and push changes
         run: |
