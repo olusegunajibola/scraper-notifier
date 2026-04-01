@@ -9,7 +9,7 @@ on:
   schedule:
     # 12:37 UTC is 13:37 (1:37 PM) in Italy (Winter Time)
     # Note: In Summer, this will run at 14:37 (2:37 PM) Italy time.
-    - cron: '07 13 * * *'    
+    - cron: '07 11 * * *'    
     
   workflow_dispatch: # Still allows manual testing
 
