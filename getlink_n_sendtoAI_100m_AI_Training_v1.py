@@ -305,7 +305,7 @@ def run_bot():
                 Analyze these links from USR {region} for the topic: {mission['topic']} on the subject: {mission['subject']}.
                 
                 Rules:
-                - If a relevant link is found, respond ONLY: MATCH: [Title] | [Full URL]
+                - If a relevant link is found, respond ONLY: MATCH: [Title] | [Full URL]. Ensure that you do not translate the URL to any language.
                 - If none match, respond: NO.
                 
                 
